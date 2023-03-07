@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Polestar AstroNAV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="style/style.css" />
+
+        <meta name="apple-mobile-web-app-title" content="AstroNAV">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="balloon.png">
+
+    </head>
+    <body>
+
+        <section class="canvas__container" js-main></section>
+        <section class="canvas__container" js-labels></section>
+
+        <section class="search">
+            <label for="search" class="search__label">Search</label>
+            <div class="search__inner">
+                <input id="search" class="search__input" type="search" placeholder="Sök" autocapitalize="off" autocomplete="off" js-search-input />
+                <div class="search__auto">
+                    <div class="search__auto__inner" js-search-some>
+                    </div>
+                    <span class="search__auto__item search__auto__item--none" js-search-none>inte i kontoret precis nu</span>
+                </div>
+            </div>
+            <button class="search__close" js-search-close>close</button>
+            <button class="search__open" js-search-open>open</button>
+        </section>
+
+
+        <div class="error" js-error>
+            <span class="error__icon">⟁</span>
+            <span class="error__test"></span>
+        </div>
+        <span class="debug__corner1" js-debug></span>
+        <!--<script src="lib/threeOrbitControls.js"></script>
+        <script src="lib/threeSVGLoader.js"></script>-->
+        <script src="js/index.js" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400');
+
+:root {
+    --fg: #666;
+    --bg: #eee;
+
+    --color1: #226fff;
+    --color2: #6605b6;
+    --color3: #c70039;
+    --color4: #ff5733;
+    --color5: #ffc300;
+    --color6: #5fa800;
+}
+
+html,body {
+    min-height: 100%;
+    margin:0;
+    font-size: 18px;
+}
+* {
+    box-sizing: border-box;
+}
+body { 
+    margin: 0; 
+    color: var(--fg);
+    background: var(--bg);
+    background: linear-gradient(0deg, rgba(83,83,83,1) 0%, rgba(180,180,180,1) 28%, rgba(236,236,236,1) 62%);
+    font-family: -apple-system, 
+        BlinkMacSystemFont, 
+        'Segoe UI', 
+        Roboto, 
+        Oxygen-Sans, 
+        Ubuntu, 
+        Cantarell, 
+        'Helvetica Neue', 
+        sans-serif;
+}
+.canvas__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* pointer-events: none;
+    user-select: none; */
+}
+canvas { 
+    width: 100%; 
+    height: 100%;
+}
+button { 
+    font-size: 1.5em; 
+}
+
+.search {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+    padding: 10vh 20px;
+    background: rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    font-size: 3em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: all 200ms, opacity 600ms;
+}
+@media ( max-width: 599px ) {
+    .search {
+        font-size: 1.5em;
+        top: 0%;
+        transform: none;
+    }
+}
+.ready .search {
+    opacity: 1;
+}
+.search--close .search {
+    top: 0;
+    padding: 18px 20px;
+}
+.search__inner {
+    position: relative;
+    width: 12em;
+    max-width: calc( 100vw - 40px );
+    margin: 0 auto;
+}
+.search__label {
+    display: none;
+}
+.search__input {
+    -webkit-appearance: none;
+    width: 100%;
+    max-height: 3em;
+    margin: 0;
+    padding: 0.3em;
+    background: transparent;
+    border: none;
+    border: 2px solid #fff;
+    border-radius: 0;
+    color: #fff;
+    font: inherit;
+    font-size: inherit;
+    text-align: center;
+    transition: max-height 200ms, opacity 200ms, color 200ms;
+    outline: none;
+}
+.search__input::placeholder {
+    color: #ccc;
+}
+.search--close .search__input {
+    max-height: 0;
+    opacity: 0;
+}
+.search--none .search__input {
+    color: var(--color3);
+    border-color: var(--color3);
+}
+/* .search--some .search__input {
+    color: var(--color6);
+    border-color: var(--color6);
+} */
+.search__auto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+.search--close .search__auto {
+    display: none;
+}
+.search__auto__item {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    margin: 0 0 1px;
+    padding: 0.5em;
+    color: #999;
+    background-color: #fff;
+    font: inherit;
+}
+.search__auto__item:focus {
+    color: #fff;
+    background-color: var(--color1);
+}
+.search__auto__item--none {
+    display: none;
+    color: #fff;
+    background-color: var(--color3);
+}
+.search--none .search__auto__item--none {
+    display: block;
+}
+.search__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    border: none;
+    overflow: hidden;
+}
+.search--close .search__close {
+    display: none;
+}
+.search__open {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 70px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    border: none;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+.search--close .search__open {
+    display: block;
+}
+
+
+
+.debug__corner1 {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.6);
+    font-size: 0.8em;
+    opacity: 0;
+}
+.location-label {
+    color: var(--color1);
+    font-size: 1em;
+    font-family: 'Barlow Semi Condensed', 
+        'AvenirNextCondensed-Medium', 
+        'Arial Nova Condensed', 
+        -apple-system, 
+        BlinkMacSystemFont, 
+        'Segoe UI', 
+        Roboto, 
+        Oxygen-Sans, 
+        Ubuntu, 
+        Cantarell, 
+        'Helvetica Neue', 
+        sans-serif;
+    font-weight: bold;
+}
+.floor-label {
+    line-height: 1;
+    font-family: 'Barlow Semi Condensed', 
+        'AvenirNextCondensed-Medium', 
+        'Arial Nova Condensed', 
+        -apple-system, 
+        BlinkMacSystemFont, 
+        'Segoe UI', 
+        Roboto, 
+        Oxygen-Sans, 
+        Ubuntu, 
+        Cantarell, 
+        'Helvetica Neue', 
+        sans-serif;
+    text-transform: uppercase;
+    padding: 0.3em;
+    background-color: rgba(255,255,255,0.7);
+}
+/* .floor-label--1,
+.location-label--1 {
+    color: var(--color1);
+}
+.floor-label--2,
+.location-label--2 {
+    color: var(--color2);
+}
+.floor-label--3,
+.location-label--3 {
+    color: var(--color3);
+}
+.floor-label--4,
+.location-label--4 {
+    color: var(--color4);
+}
+.floor-label--5,
+.location-label--5 {
+    color: var(--color5);
+}
+.floor-label--6,
+.location-label--6 {
+    color: var(--color6);
+} */
+.device__label {
+    display: none;
+    position: relative;
+}
+.see-labels .device__label,
+.device__label--active {
+    display: block;
+}
+.device__label__inner {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    font-size: 0.7em;
+    line-height: 1.2;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #666;
+    white-space: nowrap;
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg);
+}
+.device__label--active .device__label__inner {
+    background-color: var(--color3);
+    color: #fff;
+}
+.device__label span {
+    display: block;
+}
+.device__label span:first-child {
+    font-weight: bold;
+}
+
+.error {
+    display: none;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate( -50%, -50% );
+    color: rgb(189, 56, 3);
+    font-weight: bold;
+}
+.error--active {
+    display: block;
+}
+.error__icon {
+    display: block;
+    font-size: 3rem;
+}
