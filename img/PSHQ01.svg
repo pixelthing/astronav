@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 990 456" width="990px" height="456px" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 834.611 208.366 L 883.226 159.751 L 851.495 128.019 L 851.485 128.029 L 835.676 112.22 L 802.493 145.403 L 818.302 161.212 L 802.88 176.634 L 834.611 208.366 Z M 833.975 3.145 L 991.134 160.304 L 834.248 317.19 L 691.154 174.096 L 632.771 174.096 L 632.771 455.08 L 1.178 455.08 L 1.178 33.515 L 632.771 33.515 L 632.771 142.699 L 694.421 142.699 L 833.975 3.145 Z M 211.89 387.099 L 423.064 387.099 L 423.064 219.118 L 211.89 219.118 L 211.89 387.099 Z" style="fill: rgba(238, 238, 231, 0.74); stroke: rgb(139, 139, 121);"/>
+  <rect x="165.528" y="89.998" width="49.284" height="52.942" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="456.202" y="33.423" width="176.622" height="109.357" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <path d="M 277.815 81.016 L 282.14 88.939 L 273.49 88.939 L 277.815 81.016 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);"/>
+  <path d="M -277.794 -80.039 L -273.469 -72.116 L -282.119 -72.116 L -277.794 -80.039 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
+  <path d="M 426.442 418.438 L 430.767 426.361 L 422.117 426.361 L 426.442 418.438 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(0, -1, 1, 0, -101.357895, 521.389648)"/>
+  <path d="M -426.421 -417.461 L -422.096 -409.538 L -430.746 -409.538 L -426.421 -417.461 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(0, 1, -1, 0, -101.357895, 521.389648)"/>
+  <path d="M 359.879 80.366 L 364.204 88.289 L 355.554 88.289 L 359.879 80.366 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);"/>
+  <path d="M -359.858 -79.389 L -355.533 -71.466 L -364.183 -71.466 L -359.858 -79.389 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
+  <rect x="1142.495" y="353.636" width="72.16" height="35.707" style="stroke: rgb(0, 0, 0); fill: rgb(139, 139, 119);" transform="matrix(0.999998, 0.001889, 0, 1.000002, -859.77417, -322.301331)"/>
+  <rect x="419.541" y="89.741" width="36.656" height="53.039" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="362.523" y="89.741" width="36.411" height="67.833" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="451.777" y="142.727" width="17.195" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="435.579" y="142.727" width="16.151" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="419.637" y="142.727" width="16.151" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="399.031" y="119.967" width="20.577" height="37.607" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="354.885" y="33.796" width="101.22" height="35.364" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="326.613" y="89.741" width="35.941" height="26.284" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="234.646" y="89.741" width="71.92" height="68.436" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="214.909" y="119.663" width="19.771" height="38.514" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="214.909" y="90.116" width="19.771" height="29.695" style="stroke: rgb(0, 0, 0); fill: rgb(139, 139, 120);"/>
+  <rect x="326.613" y="131.25" width="35.941" height="26.284" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);"/>
+  <rect x="249.1" y="33.633" width="33.466" height="35.816" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="214.518" y="33.608" width="34.664" height="35.975" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="179.899" y="33.608" width="34.664" height="35.975" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="165.551" y="142.727" width="16.151" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="181.419" y="142.727" width="16.468" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="197.853" y="142.727" width="16.94" height="15.003" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="165.528" y="176.782" width="54.945" height="42.506" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="220.494" y="176.782" width="64.516" height="42.506" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="285.063" y="176.782" width="132.568" height="42.506" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="417.582" y="176.782" width="28.067" height="42.506" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="445.318" y="176.782" width="24.019" height="42.506" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="423.836" y="219.343" width="45.384" height="79.476" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);"/>
+  <rect x="423.836" y="298.687" width="45.384" height="88.049" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="446.375" y="386.579" width="22.845" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="423.725" y="386.579" width="22.845" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(98, 188, 130);"/>
+  <rect x="270.816" y="386.579" width="152.693" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="212.029" y="386.579" width="58.862" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(139, 139, 121);"/>
+  <rect x="187.913" y="386.579" width="24.267" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(98, 188, 130);"/>
+  <rect x="165.583" y="386.579" width="22.256" height="40.503" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="165.528" y="219.405" width="46.647" height="79.377" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);"/>
+  <rect x="165.528" y="299.053" width="46.647" height="87.474" style="stroke: rgb(0, 0, 0); fill: rgb(98, 188, 130);"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, -161.721802, 456.320099)"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, -302.725189, 617.418091)"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, -302.725189, 644.51062)"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, 0.619347, 617.418091)"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, 0.619347, 644.51062)"/>
+  <rect x="183.102" y="67.705" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="233.788" y="67.705" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="251.722" y="67.705" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="167.981" y="88.188" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="330.693" y="129.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="366.755" y="88.206" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="325.521" y="467.052" width="14" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0, -1, 1, 0, -49.619576, 434.105133)"/>
+  <rect x="366.755" y="67.626" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="169.164" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="224.874" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="289.009" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="399.714" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="429.417" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="453.249" y="175.293" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="168.101" y="425.779" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="190.143" y="425.779" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <path d="M 426.442 418.438 L 430.767 426.361 L 422.117 426.361 L 426.442 418.438 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(0, -1, 1, 0, -193.881119, 853.537476)"/>
+  <path d="M -426.421 -417.461 L -422.096 -409.538 L -430.746 -409.538 L -426.421 -417.461 Z" style="stroke: rgb(0, 0, 0); fill: rgb(255, 0, 0);" transform="matrix(0, 1, -1, 0, -193.881119, 853.537476)"/>
+  <rect x="289.009" y="425.488" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="399.714" y="425.488" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="430.333" y="425.488" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="453.547" y="425.488" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="454.206" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="437.648" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="421.368" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="199.839" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="183.281" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="167.001" y="155.862" width="12" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="475.664" y="141.365" width="18" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <rect x="539.994" y="141.365" width="18" height="3.028" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);"/>
+  <path d="M 836.193 160.732 C 836.193 171.828 827.197 180.822 816.102 180.822 C 805.59 180.822 796.965 172.752 796.085 162.469 L 817.195 162.469 L 817.195 140.671 C 827.783 141.24 836.193 150.003 836.193 160.732 Z" style="stroke: rgb(0, 0, 0); fill: rgb(139, 139, 120);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 125.37664, 624.179016)"/>
+  <rect x="85.062" y="-312.722" width="56.685" height="110.552" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="197.696" y="-424.364" width="33.825" height="32.535" style="stroke: rgb(0, 0, 0); fill: rgb(98, 187, 130);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="505.986" y="577.5" width="31.959" height="58.311" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);" transform="matrix(0.708441, -0.70577, 0.707108, 0.707108, -32.568008, 51.273949)"/>
+  <path d="M -165.918 366.232 L -108.796 424.425 L -165.918 424.425 L -165.918 366.232 Z" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);" transform="matrix(-0.707107, 0.707107, -0.707107, -0.707107, 917.118652, 520.092773)"/>
+  <rect x="171.078" y="-367.276" width="16.079" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="321.389" y="253.465" width="20.3" height="25.593" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);" transform="matrix(0.708441, -0.70577, 0.707108, 0.707108, 373.120453, 150.63504)"/>
+  <rect x="231.587" y="-424.364" width="33.825" height="56.844" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="265.404" y="-424.364" width="41.254" height="76.601" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="265.404" y="-278.526" width="41.254" height="76.654" style="stroke: rgb(0, 0, 0); fill: rgb(231, 193, 21);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="896.717" y="338.927" width="56.638" height="34.221" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);" transform="matrix(0.708441, -0.70577, 0.707108, 0.707108, -143.072632, 607.942627)"/>
+  <path d="M 84.777 -404.614 L 141.432 -346.897 L 84.777 -346.897 L 84.777 -404.614 Z" style="stroke: rgb(0, 0, 0); fill: rgb(217, 217, 209);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1479.217896, -80.881325)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1526.174805, -208.667343)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1490.196655, -196.647079)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1480.970215, -187.420761)"/>
+  <rect x="220.276" y="-392.33" width="8.818" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 917.118652, 520.092773)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1590.581299, -144.260834)"/>
+  <rect x="267.405" y="-681.527" width="12.449" height="1.57" style="stroke: rgb(0, 0, 0); fill: rgb(69, 69, 55);" transform="matrix(-0.707107, -0.707107, 0.707107, -0.707107, 1460.986694, -99.112526)"/>
+  <rect x="719.942" y="174.607" width="20.457" height="17.396" style="stroke: rgb(0, 0, 0); fill: rgb(139, 139, 120);"/>
+</svg>

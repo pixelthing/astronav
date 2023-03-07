@@ -1,8 +1,9 @@
 'use strict';
 
 import * as THREE 						from "../lib/three.module.js";
-//import { CSS2DRenderer, CSS2DObject } 	from '../lib/CSS2DRenderer.js';
-import { Floor }							from './_floor.js';
+import { OrbitControls }                from "../lib/threeOrbitControls.js";
+import { CSS2DRenderer, CSS2DObject } 	from '../lib/CSS2DRenderer.js';
+import { Floor }						from './_floor.js';
 import { Location }   					from './_location.js';
 //import { Search }    					from './_search.js';
 
@@ -10,25 +11,25 @@ import { Location }   					from './_location.js';
 
 // Config
 
-window.lolSearchIndex		= [];
-window.lolSearchIntersect	= [];
-window.lolSearchIdLookup	= {};
-window.lolSearchIdCurrent	= null;
-window.lolConfig			= {
+window.astroSearchIndex		= [];
+window.astroSearchIntersect	= [];
+window.astroSearchIdLookup	= {};
+window.astroSearchIdCurrent	= null;
+window.astroConfig			= {
 	showLocations		: true,
 	showLocationAreas 	: true,
 	
 	floorBaselineDefault: 3.5,
-	floorBaseline		: 3.5,
-	floorCount			: 6,
-	floorSpacing			: 2,
+	floorBaseline		: 1,
+	floorCount			: 3,
+	floorSpacing		: 2,
 	floorThickness		: 10,
     
     animationSpeed      : 10,
 
 	groupRotate			: 0.003,
-	imgWidth 			: 1505,
-	imgHeight 			: 1058,
+	imgWidth 			: 989.665,
+	imgHeight 			: 456.178,
 	chessBoardSquare	: 1.5,
 
 	resizeTimeout		: 1000,
@@ -94,17 +95,17 @@ window.lolConfig			= {
 	}
 }
 
-window.lolConfig.unit 	= window.lolConfig.imgWidth/40;
-window.lolConfig.cameraX= window.lolConfig.cameraXDefault;
-window.lolConfig.cameraY= window.lolConfig.cameraYDefault;
-window.lolConfig.cameraZ= window.lolConfig.cameraZDefault;
+window.astroConfig.unit 	= window.astroConfig.imgWidth/40;
+window.astroConfig.cameraX= window.astroConfig.cameraXDefault;
+window.astroConfig.cameraY= window.astroConfig.cameraYDefault;
+window.astroConfig.cameraZ= window.astroConfig.cameraZDefault;
 
 let   mainRenderer		= null;
 let   labelRenderer		= null;
 let   camera			= null;
-let   cameraX			= window.lolConfig.cameraX;
-let   cameraY			= window.lolConfig.cameraY;
-let   cameraZ			= window.lolConfig.cameraZ;
+let   cameraX			= window.astroConfig.cameraX;
+let   cameraY			= window.astroConfig.cameraY;
+let   cameraZ			= window.astroConfig.cameraZ;
 let   controls			= null;
 let   bgScene          	= null;
 let   scene         	= null;
@@ -142,12 +143,12 @@ const initScene = function() {
 	const winAspect		= winWidth / winHeight;
 
 	// label renderer
-	//labelRenderer = new CSS2DRenderer();
-	//labelRenderer.setSize( winWidth, winHeight );
-	//labelRenderer.domElement.style.position = 'absolute';
-	//labelRenderer.domElement.style.top = 0;
-	//labelRenderer.domElement.style.zIndex = 0;
-	//document.querySelector('[js-labels]').appendChild( labelRenderer.domElement );
+	labelRenderer = new CSS2DRenderer();
+	labelRenderer.setSize( winWidth, winHeight );
+	labelRenderer.domElement.style.position = 'absolute';
+	labelRenderer.domElement.style.top = 0;
+	labelRenderer.domElement.style.zIndex = 0;
+	document.querySelector('[js-labels]').appendChild( labelRenderer.domElement );
 
 	// Background Renderer
 	// bgRenderer = new THREE.WebGLRenderer( { alpha: true } );
@@ -166,17 +167,17 @@ const initScene = function() {
 	bgScene = new THREE.Scene();
 
 	// Camera
-	camera = new THREE.PerspectiveCamera( window.lolConfig.cameraFov, winAspect, 0.1, cameraZ + window.lolConfig.cameraBack );
+	camera = new THREE.PerspectiveCamera( window.astroConfig.cameraFov, winAspect, 0.1, cameraZ + window.astroConfig.cameraBack );
 	camera.position.x = cameraX;
 	camera.position.y = cameraY;
 	camera.position.z = cameraZ;
 
-	//controls = new THREE.OrbitControls( camera, mainRenderer.domElement );
-	//controls.autoRotate = true;
-
-	//controls.update();
-	//controls.maxDistance = 3000;
-	//controls.minDistance = 500;
+	// controls
+	controls = new OrbitControls( camera, mainRenderer.domElement );
+	//controls.autoRotate = true
+	controls.update();
+	controls.maxDistance = 3000;
+	controls.minDistance = 500;
 
 	// Ambient light
 	lightAmbient = new THREE.AmbientLight(0x999999);
@@ -190,10 +191,10 @@ const initScene = function() {
 }
 
 const deleteScene = function() {
-	window.lolSearchIdCurrent = null;
-	window.lolSearchIndex = [];
-	window.lolSearchIdLookup = {};
-	window.lolSearchIntersect = [];
+	window.astroSearchIdCurrent = null;
+	window.astroSearchIndex = [];
+	window.astroSearchIdLookup = {};
+	window.astroSearchIntersect = [];
 	document.querySelector('[js-labels]').innerText = '';
 	//document.querySelector('[js-bg]').innerText = '';
 	document.querySelector('[js-main]').innerText = '';
@@ -204,13 +205,12 @@ const deleteScene = function() {
 
 const initFloors = function() {
 
-	const floorsArray = [ 1, 2, 3, 4, 5, 6 ];
-
-	floorsArray.forEach( ( floor, i ) => {
-		floors[ floor ] = {
-			obj : new Floor( bgScene, scene, floor, floorsArray.length )
+	for (let i=0;i < window.astroConfig.floorCount; i++) {
+		const floorNumber = i;
+		floors[ floorNumber ] = {
+			obj : new Floor( bgScene, scene, floorNumber, window.astroConfig.floorCount )
 		};
-	} );
+	}
 	console.log( 'initFloors', floors )
 
 };
@@ -225,15 +225,6 @@ const initLocations = function() {
 	};
 
 };
-
-
-const cleanData = function( data ) {
-	let cleanData = [];
-	data.forEach( ( node, i ) => {
-		cleanData.push( node );
-	} );
-	return cleanData;
-}
 
 const cameraZoom = function( cameraXFinal, cameraYFinal, cameraZFinal ) {
 	
@@ -258,10 +249,10 @@ const cameraZoom = function( cameraXFinal, cameraYFinal, cameraZFinal ) {
 }
 
 const cameraZoomOut = function() {
-	window.lolConfig.cameraX = window.lolConfig.cameraXDefault;
-	window.lolConfig.cameraY = window.lolConfig.cameraYDefault;
-	window.lolConfig.cameraZ = window.lolConfig.cameraZDefault;
-	window.lolConfig.floorBaseline = window.lolConfig.floorBaselineDefault;
+	window.astroConfig.cameraX = window.astroConfig.cameraXDefault;
+	window.astroConfig.cameraY = window.astroConfig.cameraYDefault;
+	window.astroConfig.cameraZ = window.astroConfig.cameraZDefault;
+	window.astroConfig.floorBaseline = window.astroConfig.floorBaselineDefault;
 }
 window.cameraZoomOut = cameraZoomOut;
 
@@ -269,14 +260,16 @@ window.cameraZoomOut = cameraZoomOut;
 
 initEvents();
 initScene();
+initFloors();
+document.body.classList.add( 'ready' );
 let   resizeTimeout = null;
-window.addEventListener( 'resize', () => {
-	clearTimeout( resizeTimeout );
-	resizeTimeout = setTimeout( () => {
-		deleteScene();
-		initScene();
-	}, resizeTimeout )
-} );
+//window.addEventListener( 'resize', () => {
+//	clearTimeout( resizeTimeout );
+//	resizeTimeout = setTimeout( () => {
+//		deleteScene();
+//		initScene();
+//	}, resizeTimeout )
+//} );
 
 let  tap1 = null;
 let  labels = false;
@@ -303,17 +296,8 @@ document.querySelector('[js-debug]').addEventListener( 'dblclick', () => {
 		document.body.classList.remove( 'see-labels' );
 	}
 } );
-document.querySelector('[js-refresh]').addEventListener( 'click', () => {
-	document.querySelector('[js-refresh]').classList.add( 'refresh__icon--active' );
-	document.body.classList.add( 'loading' );
-	// deleteScene();
-	// initScene();
-	getData( true ).then( () => {
-		document.querySelector('[js-refresh]').classList.remove( 'refresh__icon--active' );
-	} )
-} );
 document.addEventListener( 'keydown', ev => {
-	if ( ev.code === 'Escape' && window.lolConfig.cameraZ !== window.lolConfig.cameraZDefault ) {
+	if ( ev.code === 'Escape' && window.astroConfig.cameraZ !== window.astroConfig.cameraZDefault ) {
 		cameraZoomOut();
 	}
 } );
@@ -333,8 +317,8 @@ const render = function() {
 	  
 	requestAnimationFrame( render );
 	
-	cameraZoom( window.lolConfig.cameraX, window.lolConfig.cameraY, window.lolConfig.cameraZ );
-	controls.update();
+	cameraZoom( window.astroConfig.cameraX, window.astroConfig.cameraY, window.astroConfig.cameraZ );
+	//controls.update();
 	
 	//labelRenderer.render( scene, camera );
 	//bgRenderer.render( bgScene, camera );

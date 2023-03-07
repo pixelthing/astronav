@@ -72,7 +72,7 @@ const Search = function( ) {
                 // currently focused on the input
                 } else if ( document.activeElement === document.querySelector('[js-search-input]') && document.querySelectorAll('[js-search-item]').length === 1 ) {
                     ev.preventDefault();
-                    // double RAF so the identity click happens after the autocomplete fires (race condition that set the lolSearchIdCurrent as null after it's set as the correct user)
+                    // double RAF so the identity click happens after the autocomplete fires (race condition that set the astroSearchIdCurrent as null after it's set as the correct user)
                     window.requestAnimationFrame( () => {
                         window.requestAnimationFrame( () => {
                             identityClick( false, document.querySelector('[js-search-item]') );
@@ -138,48 +138,48 @@ const Search = function( ) {
         }
         // add the newly discovered indexes with scores to the search index;
         indexes100.forEach( d => {
-            window.lolSearchIndex.push( {
+            window.astroSearchIndex.push( {
                 keyword : d,
                 score   : 100,
                 identity: identity
     
             } );
-            window.lolSearchIntersect.push( d );
+            window.astroSearchIntersect.push( d );
         } );
         indexesFull.forEach( ( d, i ) => {
-            window.lolSearchIndex.push( {
+            window.astroSearchIndex.push( {
                 keyword : d,
                 score   : 50 + ( i*2 ),
                 identity: identity
     
             } );
-            window.lolSearchIntersect.push( d );
+            window.astroSearchIntersect.push( d );
         } );
         indexes10.forEach( ( d, i ) => {
-            window.lolSearchIndex.push( {
+            window.astroSearchIndex.push( {
                 keyword : d,
                 score   : 10,
                 identity: identity
     
             } );
-            window.lolSearchIntersect.push( d );
+            window.astroSearchIntersect.push( d );
         } );
         indexesFirst.forEach( ( d, i ) => {
-            window.lolSearchIndex.push( {
+            window.astroSearchIndex.push( {
                 keyword : d,
                 score   : i + 1,
                 identity: identity
     
             } );
-            window.lolSearchIntersect.push( d );
+            window.astroSearchIntersect.push( d );
         } );
         indexesLast.forEach( ( d, i ) => {
-            window.lolSearchIndex.push( {
+            window.astroSearchIndex.push( {
                 keyword : d,
                 score   : i + 1,
                 identity: identity    
             } );
-            window.lolSearchIntersect.push( d );
+            window.astroSearchIntersect.push( d );
         } );
         
 
@@ -193,7 +193,7 @@ const Search = function( ) {
             foundClear();
             return;
         }
-        const intersectsFound = window.lolSearchIntersect.flatMap(( d, i) => d === keyword ? i : []);
+        const intersectsFound = window.astroSearchIntersect.flatMap(( d, i) => d === keyword ? i : []);
 
         if ( intersectsFound.length ) {
             foundSome( intersectsFound );
@@ -212,14 +212,14 @@ const Search = function( ) {
       }
 
     const foundSome = function( intersectsFound ) {
-        window.lolSearchIdCurrent = null;
+        window.astroSearchIdCurrent = null;
         identityDeLabel();
         document.querySelector('[js-search-some]').innerText = '';
         document.body.classList.add('search--some');
         document.body.classList.remove('search--none');
         // sort
         let   indexesFound = intersectsFound.map( ( d, i ) => {
-            return window.lolSearchIndex[ d ];
+            return window.astroSearchIndex[ d ];
         } );
         indexesFound.sort( compare );
         // remove duplicates
@@ -243,7 +243,7 @@ const Search = function( ) {
     }
 
     const foundNone = function() {
-        window.lolSearchIdCurrent = null;
+        window.astroSearchIdCurrent = null;
         identityDeLabel();
         document.querySelector('[js-search-some]').innerText = '';
         document.body.classList.remove('search--some');
@@ -251,7 +251,7 @@ const Search = function( ) {
     }
 
     const foundClear = function() {
-        window.lolSearchIdCurrent = null;
+        window.astroSearchIdCurrent = null;
         identityDeLabel();
         document.querySelector('[js-search-some]').innerText = '';
         document.body.classList.remove('search--some');
@@ -268,13 +268,13 @@ const Search = function( ) {
     }
 
     const identitySelect = function( identity ) {
-        window.lolSearchIdCurrent = null;
+        window.astroSearchIdCurrent = null;
         identityDeLabel();
-        window.lolConfig.floorBaseline = 3.5;
+        window.astroConfig.floorBaseline = 3.5;
         // setTimeout to make sure any existing selections get time to clear before the new selection is marked
         setTimeout( () => {
             // set the identity to focus on
-            window.lolSearchIdCurrent = identity;
+            window.astroSearchIdCurrent = identity;
             identityLabel( identity );
             idendityZoom( identity );
             close();
@@ -316,26 +316,26 @@ const Search = function( ) {
             const floorMin = floors[0];
             const floorMax = floors[ floors.length - 1 ];
             const floorBetween = ( floorMax - floorMin )/2 + floorMin;
-            window.lolConfig.cameraY = window.lolConfig.cameraYDefault;
-            window.lolConfig.cameraZ = 2000 * zoomCoef;
-            window.lolConfig.cameraX = 0;
-            window.lolConfig.floorBaseline = floorBetween + 0.75;
+            window.astroConfig.cameraY = window.astroConfig.cameraYDefault;
+            window.astroConfig.cameraZ = 2000 * zoomCoef;
+            window.astroConfig.cameraX = 0;
+            window.astroConfig.floorBaseline = floorBetween + 0.75;
         // if the devices are spread over several rooms in one floor, manage the zoom level to see the whole floor
         } else if ( rooms.length > 1 ) {
-            window.lolConfig.floorBaseline = parseInt( floors[0] ) + 0.75;
-            window.lolConfig.cameraZ = 2000 * zoomCoef;
-            window.lolConfig.cameraX = 0;
+            window.astroConfig.floorBaseline = parseInt( floors[0] ) + 0.75;
+            window.astroConfig.cameraZ = 2000 * zoomCoef;
+            window.astroConfig.cameraX = 0;
         // else zoom in on location
         } else {
-            const roomX = window.lolConfig.locations[ rooms[0] ][ 0 ];
+            const roomX = window.astroConfig.locations[ rooms[0] ][ 0 ];
             if ( parseInt( rooms[0] ) < 5 ) {
-                window.lolConfig.cameraZ = 500 * zoomCoef;
-                window.lolConfig.floorBaseline = parseInt( floors[0] ) + 0.85;
+                window.astroConfig.cameraZ = 500 * zoomCoef;
+                window.astroConfig.floorBaseline = parseInt( floors[0] ) + 0.85;
             } else {
-                window.lolConfig.cameraZ = 1500 * zoomCoef;
-                window.lolConfig.floorBaseline = parseInt( floors[0] ) + 0.75;
+                window.astroConfig.cameraZ = 1500 * zoomCoef;
+                window.astroConfig.floorBaseline = parseInt( floors[0] ) + 0.75;
             }
-            window.lolConfig.cameraX = 0 + ( ( roomX - 0.5 ) * window.lolConfig.imgWidth * 1.5 );
+            window.astroConfig.cameraX = 0 + ( ( roomX - 0.5 ) * window.astroConfig.imgWidth * 1.5 );
         }
 
     }
