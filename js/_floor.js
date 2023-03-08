@@ -14,7 +14,7 @@ class Floor {
         this.groupBg.position.y = ( this.containerH / this.floorCount * ( this.floorNo - window.astroConfig.floorBaseline ) ) ;
         this.groupBg.position.z = 0;
         this.groupBg.rotation.x = Math.PI * -0.5;
-        this.groupBg.rotation.y = 0;
+        this.groupBg.rotation.y = Math.PI;
         this.groupBg.rotation.z = 0;
         this.scene.add( this.groupBg );
     }
@@ -55,11 +55,12 @@ class Floor {
                 const floorBottom = new THREE.Group();
                 for ( var i = 0; i < paths.length; i ++ ) {
                     var path = paths[ i ];
-                    var material = new THREE.MeshBasicMaterial( {
+                    console.log(path)
+                    var material = new THREE.MeshPhongMaterial( {
                         color: path.color,
                         side: THREE.DoubleSide,
                         depthWrite: false,
-                        opacity: 1,
+                        opacity: 1
                     } );
 
 
@@ -67,8 +68,14 @@ class Floor {
 
                     for ( let j = 0; j < shapes.length; j ++ ) {
         
+                        var extrudeSettings = {
+                            steps: 1,
+                            depth: window.astroConfig.floorThickness,
+                            bevelEnabled : false
+                        };
                         const shape = shapes[ j ];
-                        const geometry = new THREE.ShapeGeometry( shape );
+                        //const geometry = new THREE.ShapeGeometry( shape );
+                        const geometry = new THREE.ExtrudeBufferGeometry( shape, extrudeSettings );
                         const mesh = new THREE.Mesh( geometry, material );
                         this.groupBg.add( mesh );
         
