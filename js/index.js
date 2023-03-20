@@ -20,25 +20,24 @@ window.astroConfig			= {
 	showLocationAreas 	: true,
 	
 	floorBaselineDefault: 3.5,
-	floorBaseline		: 1,
+	floorBaseline		: 0,
 	floorCount			: 3,
 	floorSpacing		: 2,
-	floorThickness		: 10,
+	floorThickness		: 5,
     
     animationSpeed      : 10,
 
 	groupRotate			: 0.003,
-	imgWidth 			: 989.665,
-	imgHeight 			: 456.178,
-	chessBoardSquare	: 1.5,
+	imgWidth 			: 990,
+	imgHeight 			: 456,
 
 	resizeTimeout		: 1000,
 
-	cameraFov 			: 60,
-	cameraXDefault 		: 1000,
-	cameraYDefault 		: 0,
-	cameraZDefault 		: 3000,
-	cameraBack 			: 2000,
+	cameraFov 			: 40,
+	cameraXDefault 		: 2000,
+	cameraYDefault 		: 1000,
+	cameraZDefault 		: 1000,
+	cameraBack 			: 3000,
 	radius 				: 700,
 
 	locations			: {

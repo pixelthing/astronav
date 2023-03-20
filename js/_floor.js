@@ -15,7 +15,7 @@ class Floor {
         this.groupBg.position.z = 0;
         this.groupBg.rotation.x = Math.PI * -0.5;
         this.groupBg.rotation.y = Math.PI;
-        this.groupBg.rotation.z = 0;
+        this.groupBg.rotation.z = Math.PI;
         this.scene.add( this.groupBg );
     }
 
