@@ -12,27 +12,27 @@ class Location {
     addFloor() {
         this.floor = new THREE.Object3D();
         this.floor.actorType = 'locationFloor';
-        this.floor.position.x = window.astroConfig.imgWidth * -1;
-        this.floor.position.y = ( this.containerH / window.astroConfig.floorCount * ( this.floorNo - window.astroConfig.floorBaseline ) ) ;
-        this.floor.position.z = window.astroConfig.imgHeight * -0.5;
+        this.floor.position.x = window.astro.imgWidth * -1;
+        this.floor.position.y = ( this.containerH / window.astro.floorCount * ( this.floorNo - window.astro.floorBaseline ) ) ;
+        this.floor.position.z = window.astro.imgHeight * -0.5;
         this.floor.rotation.x = 0;
-        this.floor.rotation.y = 0;
+        this.floorapp.rotation.y = 0;
         this.floor.rotation.z = 0;
         this.scene.add( this.floor );
     }
 
     addRoom() {
-        const locationDesc = window.astroConfig.locations[ this.roomRaw ];
+        const locationDesc = window.astro.locations[ this.roomRaw ];
         this.room = new THREE.Object3D();
-        this.room.position.x = window.astroConfig.imgWidth;
+        this.room.position.x = window.astro.imgWidth;
         this.room.position.y = 0;
         // check for room position on this floor
         if ( locationDesc ) {
-            this.room.position.x = ( locationDesc[ 0 ] * window.astroConfig.imgWidth ) + window.astroConfig.imgWidth/2;
+            this.room.position.x = ( locationDesc[ 0 ] * window.astro.imgWidth ) + window.astro.imgWidth/2;
             this.room.position.y = 0;
-            this.room.position.z = ( locationDesc[ 1 ] * window.astroConfig.imgHeight );
+            this.room.position.z = ( locationDesc[ 1 ] * window.astro.imgHeight );
         } else {
-            this.room.position.x = window.astroConfig.imgWidth;
+            this.room.position.x = window.astro.imgWidth;
             this.room.position.y = 0;
             this.room.position.y = 0;
         }
@@ -56,7 +56,7 @@ class Location {
         this.dot.rotation.x = 0;
         this.dot.rotation.y = 0;
         this.dot.rotation.z = 0;
-        if ( window.astroConfig.showLocations ) {
+        if ( window.astro.showLocations ) {
             this.room.add( this.dot );
         }
     }
@@ -66,16 +66,16 @@ class Location {
         labelDiv.className = 'location-label location-label--' + this.floorNo;
         labelDiv.textContent = this.roomRaw;
         //this.label = new CSS2DObject( labelDiv );
-        //this.label.position.set( 0, window.astroConfig.unit*2, 0 );
+        //this.label.position.set( 0, window.astro.unit*2, 0 );
         //this.dot.add( this.label );
     }
 
     update() {
         // ease floor transitions
-        const floorFinalPos = ( this.containerH / window.astroConfig.floorCount * ( this.floorNo - window.astroConfig.floorBaseline ) );
+        const floorFinalPos = ( this.containerH / window.astro.floorCount * ( this.floorNo - window.astro.floorBaseline ) );
         let   nextPos  = floorFinalPos;
         if ( this.floor.position.y !== floorFinalPos ) {
-            nextPos = ( floorFinalPos - this.floor.position.y )/window.astroConfig.animationSpeed + this.floor.position.y;
+            nextPos = ( floorFinalPos - this.floor.position.y )/window.astro.animationSpeed + this.floor.position.y;
             if ( Math.abs( floorFinalPos - nextPos ) < 10 ) {
                 nextPos = floorFinalPos;
             }
@@ -88,7 +88,7 @@ class Location {
         this.roomRaw    = location.room;
         this.floorNo    = parseInt( this.roomRaw.substr( 0, 1 ));
         this.roomNo     = parseInt( this.roomRaw.substr( 1 ));
-        this.containerH = window.astroConfig.imgHeight * window.astroConfig.floorSpacing;
+        this.containerH = window.astro.imgHeight * window.astro.floorSpacing;
         this.floor      = null;
         this.room       = null;
         this.dot        = null;
@@ -96,7 +96,7 @@ class Location {
         this.addFloor( );
         this.addRoom( );
         this.addDot( );
-        if ( window.astroConfig.showLocations ) {
+        if ( window.astro.showLocations ) {
             this.addLabel( );
         }
     }
